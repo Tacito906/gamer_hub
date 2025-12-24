@@ -1,0 +1,28 @@
+[ {
+  "id" : 1,
+  "username" : "admin",
+  "password" : "admin123",
+  "email" : "admin@test.com",
+  "trackedGameIds" : [ 1, 2 ],
+  "communityIds" : [ ],
+  "friendIds" : [ ],
+  "avatarUrl" : null
+}, {
+  "id" : 3,
+  "username" : "gamer2023",
+  "password" : "gamerpass",
+  "email" : "gamer@email.com",
+  "trackedGameIds" : [ 1, 3 ],
+  "communityIds" : [ ],
+  "friendIds" : [ ],
+  "avatarUrl" : null
+}, {
+  "id" : 2,
+  "username" : "player1",
+  "password" : "password123",
+  "email" : "player1@test.com",
+  "trackedGameIds" : [ 1, 2, 3 ],
+  "communityIds" : [ ],
+  "friendIds" : [ ],
+  "avatarUrl" : null
+} ]

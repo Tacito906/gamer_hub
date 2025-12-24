@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Circle?>
+
+<AnchorPane prefHeight="700" prefWidth="900" styleClass="dark-background" 
+            xmlns="http://javafx.com/javafx/17" 
+            xmlns:fx="http://javafx.com/fxml/1" 
+            fx:controller="gamer_hub.controllers.ProfileController">
+   
+   <!-- Кнопка закрытия -->
+   <Button text="✕" styleClass="secondary-button" 
+           onAction="#onCloseClick" 
+           AnchorPane.topAnchor="10" AnchorPane.rightAnchor="10"
+           style="-fx-font-size: 16px; -fx-padding: 5 10; -fx-min-width: 40; -fx-min-height: 40;" />
+   
+   <!-- Основной контент -->
+   <ScrollPane fitToWidth="true" styleClass="transparent" 
+               AnchorPane.topAnchor="0" AnchorPane.bottomAnchor="0" 
+               AnchorPane.leftAnchor="0" AnchorPane.rightAnchor="0">
+      
+      <VBox spacing="20" style="-fx-padding: 40;">
+         
+         <!-- Заголовок -->
+         <Label text="👤 Мой профиль" styleClass="title-text" 
+                style="-fx-padding: 0 0 20 0;" />
+         
+         <!-- Основная информация -->
+         <VBox styleClass="settings-section" spacing="15">
+            <Label text="Основная информация" styleClass="settings-section-title" />
+            
+            <HBox alignment="CENTER_LEFT" spacing="20">
+               <!-- Аватар -->
+               <Circle fx:id="avatarCircle" radius="60" 
+                       style="-fx-fill: #8E5915; -fx-stroke: #F4B315; -fx-stroke-width: 3;" />
+               
+               <VBox spacing="10">
+                  <Label fx:id="usernameLabel" styleClass="title-text" 
+                         style="-fx-font-size: 28px;" />
+                  <Label fx:id="emailLabel" styleClass="normal-text" 
+                         style="-fx-font-size: 16px;" />
+                  <Label fx:id="userIdLabel" styleClass="normal-text" 
+                         style="-fx-text-fill: #8E5915;" />
+               </VBox>
+            </HBox>
+         </VBox>
+         
+         <!-- Статистика -->
+         <VBox styleClass="settings-section" spacing="15">
+            <Label text="📊 Статистика" styleClass="settings-section-title" />
+            
+            <HBox spacing="30" alignment="CENTER">
+               <VBox alignment="CENTER" spacing="5">
+                  <Label fx:id="gamesCountLabel" styleClass="title-text" 
+                         style="-fx-font-size: 32px; -fx-text-fill: #F4B315;" />
+                  <Label text="отслеживаемых игр" styleClass="normal-text" />
+               </VBox>
+               
+               <VBox alignment="CENTER" spacing="5">
+                  <Label fx:id="communitiesCountLabel" styleClass="title-text" 
+                         style="-fx-font-size: 32px; -fx-text-fill: #E59312;" />
+                  <Label text="сообществ" styleClass="normal-text" />
+               </VBox>
+               
+               <VBox alignment="CENTER" spacing="5">
+                  <Label fx:id="friendsCountLabel" styleClass="title-text" 
+                         style="-fx-font-size: 32px; -fx-text-fill: #8E5915;" />
+                  <Label text="друзей" styleClass="normal-text" />
+               </VBox>
+               
+               <VBox alignment="CENTER" spacing="5">
+                  <Label fx:id="requestsCountLabel" styleClass="title-text" 
+                         style="-fx-font-size: 32px; -fx-text-fill: #4CAF50;" />
+                  <Label text="активных анкет" styleClass="normal-text" />
+               </VBox>
+            </HBox>
+         </VBox>
+         
+         <!-- Отслеживаемые игры -->
+         <VBox fx:id="gamesSection" styleClass="settings-section" spacing="15">
+            <Label text="🎮 Отслеживаемые игры" styleClass="settings-section-title" />
+            
+            <VBox fx:id="gamesList" spacing="10" />
+            
+            <Label fx:id="noGamesLabel" text="Нет отслеживаемых игр" 
+                   styleClass="normal-text" style="-fx-text-alignment: center; -fx-padding: 20;" 
+                   visible="false" managed="false" />
+         </VBox>
+         
+         <!-- Мои сообщества -->
+         <VBox fx:id="communitiesSection" styleClass="settings-section" spacing="15">
+            <Label text="👥 Мои сообщества" styleClass="settings-section-title" />
+            
+            <VBox fx:id="communitiesList" spacing="10" />
+            
+            <Label fx:id="noCommunitiesLabel" text="Нет сообществ" 
+                   styleClass="normal-text" style="-fx-text-alignment: center; -fx-padding: 20;" 
+                   visible="false" managed="false" />
+         </VBox>
+         
+         <!-- Мои друзья -->
+         <VBox fx:id="friendsSection" styleClass="settings-section" spacing="15">
+            <Label text="🤝 Мои друзья" styleClass="settings-section-title" />
+            
+            <VBox fx:id="friendsList" spacing="10" />
+            
+            <Label fx:id="noFriendsLabel" text="Нет друзей" 
+                   styleClass="normal-text" style="-fx-text-alignment: center; -fx-padding: 20;" 
+                   visible="false" managed="false" />
+         </VBox>
+         
+         <!-- Системная информация -->
+         <VBox styleClass="settings-section" spacing="15">
+            <Label text="⚙️ Системная информация" styleClass="settings-section-title" />
+            
+            <HBox spacing="15" alignment="CENTER_LEFT">
+               <Label text="Дата регистрации:" styleClass="normal-text" 
+                      style="-fx-min-width: 150;" />
+               <Label fx:id="registrationDateLabel" text="Нет данных" 
+                      styleClass="normal-text" style="-fx-text-fill: #8E5915;" />
+            </HBox>
+            
+            <HBox spacing="15" alignment="CENTER_LEFT">
+               <Label text="Версия приложения:" styleClass="normal-text" 
+                      style="-fx-min-width: 150;" />
+               <Label text="Gamer Hub v1.0" styleClass="normal-text" 
+                      style="-fx-text-fill: #8E5915;" />
+            </HBox>
+            
+            <HBox spacing="15" alignment="CENTER_LEFT">
+               <Label text="ID пользователя:" styleClass="normal-text" 
+                      style="-fx-min-width: 150;" />
+               <Label fx:id="userUniqueIdLabel" styleClass="normal-text" 
+                      style="-fx-text-fill: #8E5915;" />
+            </HBox>
+         </VBox>
+         
+         <!-- Кнопки действий -->
+         <HBox spacing="20" alignment="CENTER" style="-fx-padding: 20 0 0 0;">
+            <Button text="✏️ Редактировать профиль" styleClass="primary-button" 
+                    onAction="#onEditProfileClick" 
+                    style="-fx-pref-width: 200;" />
+            
+            <Button text="🔄 Обновить данные" styleClass="secondary-button" 
+                    onAction="#onRefreshClick" 
+                    style="-fx-pref-width: 150;" />
+            
+            <Button text="📤 Экспорт данных" styleClass="secondary-button" 
+                    onAction="#onExportClick" 
+                    style="-fx-pref-width: 150;" />
+         </HBox>
+         
+         <!-- Футер -->
+         <HBox alignment="CENTER" spacing="10" styleClass="panel-background" 
+               style="-fx-padding: 15; -fx-background-radius: 10;">
+            <Label text="Профиль пользователя" styleClass="normal-text" />
+            <Label text="|" styleClass="normal-text" />
+            <Label fx:id="lastUpdatedLabel" text="" styleClass="normal-text" 
+                   style="-fx-text-fill: #8E5915;" />
+         </HBox>
+      </VBox>
+   </ScrollPane>
+</AnchorPane>

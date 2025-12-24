@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+
+<AnchorPane prefHeight="550" prefWidth="500" styleClass="dark-background" 
+            xmlns="http://javafx.com/javafx/17" 
+            xmlns:fx="http://javafx.com/fxml/1" 
+            fx:controller="gamer_hub.controllers.RegisterController">
+   
+   <VBox alignment="CENTER" spacing="25" 
+         AnchorPane.bottomAnchor="0.0" 
+         AnchorPane.leftAnchor="0.0" 
+         AnchorPane.rightAnchor="0.0" 
+         AnchorPane.topAnchor="0.0">
+      
+      <Label styleClass="title-text" text="Регистрация" />
+      
+      <VBox alignment="CENTER" spacing="18" styleClass="panel-background" 
+            style="-fx-pref-width: 420;">
+         
+         <VBox styleClass="input-group" style="-fx-pref-width: 350;">
+            <Label styleClass="normal-text" text="Имя пользователя:" />
+            <TextField styleClass="input-field" fx:id="usernameField" 
+                      promptText="Придумайте имя пользователя" />
+         </VBox>
+         
+         <VBox styleClass="input-group" style="-fx-pref-width: 350;">
+            <Label styleClass="normal-text" text="Пароль:" />
+            <PasswordField styleClass="password-field" fx:id="passwordField" 
+                          promptText="Придумайте пароль" />
+         </VBox>
+         
+         <VBox styleClass="input-group" style="-fx-pref-width: 350;">
+            <Label styleClass="normal-text" text="Подтвердите пароль:" />
+            <PasswordField styleClass="password-field" fx:id="confirmPasswordField" 
+                          promptText="Повторите пароль" />
+         </VBox>
+         
+         <VBox styleClass="input-group" style="-fx-pref-width: 350;">
+            <Label styleClass="normal-text" text="Email:" />
+            <TextField styleClass="input-field" fx:id="emailField" 
+                      promptText="Введите ваш email" />
+         </VBox>
+         
+         <Label fx:id="errorLabel" styleClass="error-text" text="" 
+                style="-fx-pref-width: 350; -fx-alignment: center;" />
+         
+         <VBox styleClass="button-group" style="-fx-pref-width: 350;">
+            <Button styleClass="primary-button" fx:id="registerButton" 
+                    text="Зарегистрироваться" onAction="#onRegister" />
+            
+            <Button styleClass="secondary-button" fx:id="cancelButton" 
+                    text="Отмена" onAction="#onCancel" />
+         </VBox>
+      </VBox>
+   </VBox>
+</AnchorPane>

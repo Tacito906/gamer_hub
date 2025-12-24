@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<AnchorPane prefHeight="600" prefWidth="800" styleClass="dark-background" 
+            xmlns="http://javafx.com/javafx/17" 
+            xmlns:fx="http://javafx.com/fxml/1" 
+            fx:controller="gamer_hub.controllers.AddGameController">
+   
+   <VBox alignment="CENTER" spacing="20" 
+         AnchorPane.bottomAnchor="0.0" 
+         AnchorPane.leftAnchor="0.0" 
+         AnchorPane.rightAnchor="0.0" 
+         AnchorPane.topAnchor="0.0">
+      
+      <Label styleClass="title-text" text="Добавление игр" />
+      
+      <Label styleClass="normal-text" text="Выберите игры, которые хотите отслеживать:" 
+             style="-fx-text-alignment: center;" />
+      
+      <!-- Панель с играми -->
+      <VBox styleClass="panel-background" style="-fx-pref-width: 700; -fx-pref-height: 400;">
+         
+         <ScrollPane style="-fx-background-color: transparent; -fx-padding: 10;" 
+                     styleClass="scroll-pane">
+            <VBox fx:id="gamesContainer" spacing="15" style="-fx-padding: 10;" />
+         </ScrollPane>
+         
+      </VBox>
+      
+      <!-- Панель с кнопками -->
+      <HBox alignment="CENTER" spacing="20">
+         <Button styleClass="primary-button" fx:id="trackButton" 
+                 text="Отслеживать выбранные" onAction="#onTrackClick" />
+         
+         <Button styleClass="secondary-button" fx:id="cancelButton" 
+                 text="Отмена" onAction="#onCancelClick" />
+      </HBox>
+      
+      <Label fx:id="infoLabel" styleClass="normal-text" text="" 
+             style="-fx-text-alignment: center; -fx-padding: 10;" />
+   </VBox>
+</AnchorPane>

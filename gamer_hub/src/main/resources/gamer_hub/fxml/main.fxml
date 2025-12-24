@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<AnchorPane prefHeight="800" prefWidth="1200" styleClass="dark-background" 
+            xmlns="http://javafx.com/javafx/17" 
+            xmlns:fx="http://javafx.com/fxml/1" 
+            fx:controller="gamer_hub.controllers.MainController">
+   
+   <!-- Левая боковая панель -->
+   <VBox fx:id="sidebar" styleClass="panel-background" 
+         style="-fx-pref-width: 200; -fx-spacing: 20; -fx-padding: 20;" 
+         AnchorPane.topAnchor="0" AnchorPane.bottomAnchor="0" AnchorPane.leftAnchor="0">
+      
+      <Label text="Навигация" styleClass="subtitle-text" 
+             style="-fx-padding: 0 0 10 0; -fx-border-color: #8E5915; -fx-border-width: 0 0 2 0;" />
+      
+      <Button styleClass="secondary-button" text="Главная" 
+              onAction="#onHomeClick" style="-fx-pref-width: 160;" />
+      
+      <Button styleClass="secondary-button" text="Мои сообщества" 
+              onAction="#onCommunitiesClick" style="-fx-pref-width: 160;" />
+      
+      <Button styleClass="secondary-button" text="Мои друзья" 
+              onAction="#onFriendsClick" style="-fx-pref-width: 160;" />
+      
+      <!-- Новые кнопки: Мои анкеты и Мои турниры -->
+      <Button styleClass="secondary-button" text="Мои анкеты" 
+              onAction="#onMyRequestsClick" style="-fx-pref-width: 160;" />
+      
+      <Button styleClass="secondary-button" text="Мои турниры" 
+              onAction="#onMyTournamentsClick" style="-fx-pref-width: 160;" />
+      
+      <Button styleClass="secondary-button" text="Профиль" 
+              onAction="#onProfileClick" style="-fx-pref-width: 160;" />
+      
+      <Button styleClass="secondary-button" text="Настройки" 
+              onAction="#onSettingsClick" style="-fx-pref-width: 160;" />
+      
+      <VBox VBox.vgrow="ALWAYS" />
+      
+      <Label fx:id="userInfoLabel" styleClass="normal-text" 
+             style="-fx-padding: 10 0 0 0;" />
+   </VBox>
+   
+   <!-- Основная область -->
+   <VBox fx:id="mainContent" style="-fx-padding: 20; -fx-spacing: 15;" 
+         AnchorPane.topAnchor="0" AnchorPane.bottomAnchor="0" AnchorPane.leftAnchor="220" 
+         AnchorPane.rightAnchor="0">
+      
+      <!-- Верхняя панель: кнопка бургер, заголовок и кнопка -->
+      <HBox alignment="CENTER_LEFT" spacing="15">
+         <!-- Кнопка-бургер для скрытия/показа боковой панели -->
+         <Button fx:id="sidebarToggleButton" styleClass="burger-button" 
+                 onAction="#onSidebarToggleClick" 
+                 style="-fx-padding: 5; -fx-background-radius: 5;">
+            <graphic>
+               <HBox alignment="CENTER" spacing="2" style="-fx-padding: 2;">
+                  <Label text="☰" style="-fx-font-size: 20px; -fx-text-fill: #D3AF85;" />
+               </HBox>
+            </graphic>
+         </Button>
+         
+         <Label text="Мои игры" styleClass="subtitle-text" />
+         <HBox HBox.hgrow="ALWAYS" />
+         <Button styleClass="primary-button" text="+ Добавить игру" 
+                 onAction="#onAddGameClick" style="-fx-padding: 8 15;" />
+      </HBox>
+      
+      <!-- Вкладки с играми (только если есть игры) -->
+      <TabPane fx:id="gamesTabPane" 
+               styleClass="tab-pane-custom" 
+               visible="false" 
+               managed="false"
+               style="-fx-background-color: transparent; -fx-tab-min-width: 120; -fx-padding: 10 0 0 0;" />
+      
+      <!-- Область для сообщения, если нет игр -->
+      <VBox fx:id="noGamesMessage" alignment="CENTER" spacing="20" VBox.vgrow="ALWAYS" 
+            style="-fx-pref-height: 600;">
+         <Label text="🎮" style="-fx-font-size: 48px;" />
+         <Label text="У вас пока нет отслеживаемых игр" styleClass="subtitle-text" />
+         <Label text="Добавьте игры, чтобы видеть сообщества, анкеты и турниры" 
+                styleClass="normal-text" style="-fx-text-alignment: center;" />
+         <Button styleClass="primary-button" text="Добавить первую игру" 
+                 onAction="#onAddFirstGameClick" style="-fx-pref-width: 200;" />
+      </VBox>
+      
+      <!-- Нижняя панель информации -->
+      <HBox alignment="CENTER" spacing="10" styleClass="panel-background" 
+            style="-fx-padding: 15; -fx-background-radius: 10;">
+         <Label text="Gamer Hub v1.0" styleClass="normal-text" />
+         <Label text="|" styleClass="normal-text" />
+         <Label text="Для тестирования" styleClass="normal-text" />
+         <Label text="|" styleClass="normal-text" />
+         <Label text="Главное окно" styleClass="normal-text" />
+      </HBox>
+   </VBox>
+</AnchorPane>

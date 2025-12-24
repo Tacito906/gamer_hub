@@ -1,0 +1,241 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.Slider?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<AnchorPane prefHeight="700" prefWidth="900" styleClass="dark-background" 
+            xmlns="http://javafx.com/javafx/17" 
+            xmlns:fx="http://javafx.com/fxml/1" 
+            fx:controller="gamer_hub.controllers.SettingsController">
+   
+   <!-- Главный контейнер с прокруткой -->
+   <ScrollPane fx:id="mainScrollPane" fitToWidth="true" hbarPolicy="NEVER" vbarPolicy="AS_NEEDED" 
+               style="-fx-background-color: transparent;"
+               AnchorPane.topAnchor="0" AnchorPane.bottomAnchor="0" 
+               AnchorPane.leftAnchor="0" AnchorPane.rightAnchor="0">
+      
+      <VBox spacing="25" style="-fx-padding: 20;">
+         
+         <!-- Заголовок -->
+         <Label text="⚙️ Настройки" styleClass="title-text" 
+                style="-fx-padding: 0 0 10 0;" />
+         
+         <!-- Раздел 1: Общие настройки -->
+         <VBox spacing="15" styleClass="panel-background">
+            <Label text="Общие настройки" styleClass="subtitle-text" 
+                   style="-fx-border-color: #8E5915; -fx-border-width: 0 0 2 0; -fx-padding: 0 0 10 0;" />
+            
+            <VBox spacing="12" style="-fx-padding: 0 0 0 15;">
+               <HBox alignment="CENTER_LEFT" spacing="20" style="-fx-pref-height: 35;">
+                  <Label text="Язык:" styleClass="normal-text" minWidth="120" />
+                  <ComboBox fx:id="languageComboBox" styleClass="input-field" 
+                            style="-fx-pref-width: 200;" />
+               </HBox>
+               
+               <HBox alignment="CENTER_LEFT" spacing="20" style="-fx-pref-height: 35;">
+                  <Label text="Тема:" styleClass="normal-text" minWidth="120" />
+                  <ComboBox fx:id="themeComboBox" styleClass="input-field" 
+                            style="-fx-pref-width: 200;" />
+               </HBox>
+               
+               <HBox alignment="CENTER_LEFT" spacing="20" style="-fx-pref-height: 35;">
+                  <Label text="Размер шрифта:" styleClass="normal-text" minWidth="120" />
+                  <Slider fx:id="fontSizeSlider" min="10" max="20" value="14" 
+                          style="-fx-pref-width: 250;" />
+                  <Label fx:id="fontSizeLabel" text="14" styleClass="normal-text" 
+                         style="-fx-min-width: 40;" />
+               </HBox>
+               
+               <CheckBox fx:id="animationsCheckBox" text="Включить анимации" 
+                         styleClass="check-box" style="-fx-pref-height: 30;" />
+               <CheckBox fx:id="autoStartCheckBox" text="Запускать при старте системы" 
+                         styleClass="check-box" style="-fx-pref-height: 30;" />
+            </VBox>
+         </VBox>
+         
+         <!-- Раздел 2: Уведомления -->
+         <VBox spacing="15" styleClass="panel-background">
+            <Label text="🔔 Уведомления" styleClass="subtitle-text" 
+                   style="-fx-border-color: #8E5915; -fx-border-width: 0 0 2 0; -fx-padding: 0 0 10 0;" />
+            
+            <VBox spacing="10" style="-fx-padding: 0 0 0 15;">
+               <CheckBox fx:id="notificationsEnabledCheckBox" text="Включить уведомления" 
+                         styleClass="check-box" selected="true" style="-fx-pref-height: 30;" />
+               
+               <VBox spacing="8" style="-fx-padding: 10 0 0 20;">
+                  <CheckBox fx:id="friendRequestsCheckBox" text="Заявки в друзья" 
+                            styleClass="check-box" selected="true" style="-fx-pref-height: 25;" />
+                  <CheckBox fx:id="communityInvitesCheckBox" text="Приглашения в сообщества" 
+                            styleClass="check-box" selected="true" style="-fx-pref-height: 25;" />
+                  <CheckBox fx:id="tournamentUpdatesCheckBox" text="Обновления турниров" 
+                            styleClass="check-box" selected="true" style="-fx-pref-height: 25;" />
+                  <CheckBox fx:id="gameNewsCheckBox" text="Новости отслеживаемых игр" 
+                            styleClass="check-box" selected="true" style="-fx-pref-height: 25;" />
+               </VBox>
+               
+               <HBox alignment="CENTER_LEFT" spacing="20" style="-fx-padding: 10 0 0 0; -fx-pref-height: 35;">
+                  <Label text="Громкость уведомлений:" styleClass="normal-text" minWidth="120" />
+                  <Slider fx:id="notificationVolumeSlider" min="0" max="100" value="80" 
+                          style="-fx-pref-width: 250;" />
+                  <Label fx:id="notificationVolumeLabel" text="80%" styleClass="normal-text" 
+                         style="-fx-min-width: 40;" />
+               </HBox>
+            </VBox>
+         </VBox>
+         
+         <!-- Раздел 3: Конфиденциальность -->
+         <VBox spacing="15" styleClass="panel-background">
+            <Label text="👁️ Конфиденциальность" styleClass="subtitle-text" 
+                   style="-fx-border-color: #8E5915; -fx-border-width: 0 0 2 0; -fx-padding: 0 0 10 0;" />
+            
+            <VBox spacing="10" style="-fx-padding: 0 0 0 15;">
+               <CheckBox fx:id="profileVisibleCheckBox" text="Мой профиль виден другим пользователям" 
+                         styleClass="check-box" selected="true" style="-fx-pref-height: 25;" />
+               <CheckBox fx:id="showOnlineStatusCheckBox" text="Показывать статус онлайн" 
+                         styleClass="check-box" selected="true" style="-fx-pref-height: 25;" />
+               <CheckBox fx:id="showTrackedGamesCheckBox" text="Показывать отслеживаемые игры" 
+                         styleClass="check-box" selected="true" style="-fx-pref-height: 25;" />
+               <CheckBox fx:id="allowFriendRequestsCheckBox" text="Разрешать заявки в друзья" 
+                         styleClass="check-box" selected="true" style="-fx-pref-height: 25;" />
+               <CheckBox fx:id="dataCollectionCheckBox" text="Отправлять анонимные данные для улучшения сервиса" 
+                         styleClass="check-box" selected="false" style="-fx-pref-height: 25;" />
+            </VBox>
+         </VBox>
+         
+         <!-- Раздел 4: Производительность -->
+         <VBox spacing="15" styleClass="panel-background">
+            <Label text="⚡ Производительность" styleClass="subtitle-text" 
+                   style="-fx-border-color: #8E5915; -fx-border-width: 0 0 2 0; -fx-padding: 0 0 10 0;" />
+            
+            <VBox spacing="12" style="-fx-padding: 0 0 0 15;">
+               <HBox alignment="CENTER_LEFT" spacing="20" style="-fx-pref-height: 35;">
+                  <Label text="Качество графики:" styleClass="normal-text" minWidth="120" />
+                  <ComboBox fx:id="graphicsQualityComboBox" styleClass="input-field" 
+                            style="-fx-pref-width: 200;" />
+               </HBox>
+               
+               <HBox alignment="CENTER_LEFT" spacing="20" style="-fx-pref-height: 35;">
+                  <Label text="Частота обновления:" styleClass="normal-text" minWidth="120" />
+                  <ComboBox fx:id="refreshRateComboBox" styleClass="input-field" 
+                            style="-fx-pref-width: 200;" />
+               </HBox>
+               
+               <CheckBox fx:id="hardwareAccelerationCheckBox" text="Аппаратное ускорение" 
+                         styleClass="check-box" selected="true" style="-fx-pref-height: 30;" />
+               <CheckBox fx:id="reduceAnimationsCheckBox" text="Уменьшить анимации для повышения производительности" 
+                         styleClass="check-box" style="-fx-pref-height: 30;" />
+            </VBox>
+         </VBox>
+         
+         <!-- Раздел 5: Экспериментальные функции -->
+         <VBox spacing="15" styleClass="panel-background">
+            <Label text="🔬 Экспериментальные функции" styleClass="subtitle-text" 
+                   style="-fx-border-color: #8E5915; -fx-border-width: 0 0 2 0; -fx-padding: 0 0 10 0;" />
+            
+            <VBox spacing="10" style="-fx-padding: 0 0 0 15;">
+               <Label text="Включение этих функций может привести к нестабильной работе приложения" 
+                      styleClass="normal-text" style="-fx-text-fill: #E59312; -fx-wrap-text: true; -fx-padding: 0 0 5 0;" />
+               
+               <CheckBox fx:id="betaFeaturesCheckBox" text="Бета-функции" 
+                         styleClass="check-box" style="-fx-pref-height: 25;" />
+               <CheckBox fx:id="voiceChatCheckBox" text="Голосовой чат (бета)" 
+                         styleClass="check-box" style="-fx-pref-height: 25;" />
+               <CheckBox fx:id="advancedStatsCheckBox" text="Расширенная статистика" 
+                         styleClass="check-box" style="-fx-pref-height: 25;" />
+            </VBox>
+         </VBox>
+         
+         <!-- Раздел 6: Безопасность -->
+         <VBox spacing="15" styleClass="panel-background">
+            <Label text="🔒 Безопасность" styleClass="subtitle-text" 
+                   style="-fx-border-color: #8E5915; -fx-border-width: 0 0 2 0; -fx-padding: 0 0 10 0;" />
+            
+            <VBox spacing="10" style="-fx-padding: 0 0 0 15;">
+               <CheckBox fx:id="twoFactorAuthCheckBox" text="Двухфакторная аутентификация" 
+                         styleClass="check-box" style="-fx-pref-height: 25;" />
+               <CheckBox fx:id="sessionExpirationCheckBox" text="Автоматический выход после 30 минут бездействия" 
+                         styleClass="check-box" selected="true" style="-fx-pref-height: 25;" />
+               <CheckBox fx:id="loginNotificationsCheckBox" text="Уведомления о входе в аккаунт" 
+                         styleClass="check-box" selected="true" style="-fx-pref-height: 25;" />
+               
+               <HBox alignment="CENTER_LEFT" spacing="20" style="-fx-padding: 10 0 0 0; -fx-pref-height: 35;">
+                  <Label text="История сессий:" styleClass="normal-text" minWidth="120" />
+                  <ComboBox fx:id="sessionHistoryComboBox" styleClass="input-field" 
+                            style="-fx-pref-width: 200;" />
+               </HBox>
+            </VBox>
+         </VBox>
+         
+         <!-- Раздел 7: Расширенные настройки -->
+         <VBox spacing="15" styleClass="panel-background">
+            <Label text="🛠️ Расширенные настройки" styleClass="subtitle-text" 
+                   style="-fx-border-color: #8E5915; -fx-border-width: 0 0 2 0; -fx-padding: 0 0 10 0;" />
+            
+            <VBox spacing="10" style="-fx-padding: 0 0 0 15;">
+               <HBox alignment="CENTER_LEFT" spacing="20" style="-fx-pref-height: 35;">
+                  <Label text="Кэш приложения:" styleClass="normal-text" minWidth="120" />
+                  <Slider fx:id="cacheSizeSlider" min="100" max="1000" value="500" 
+                          style="-fx-pref-width: 250;" />
+                  <Label fx:id="cacheSizeLabel" text="500 МБ" styleClass="normal-text" 
+                         style="-fx-min-width: 60;" />
+               </HBox>
+               
+               <HBox alignment="CENTER_LEFT" spacing="20" style="-fx-pref-height: 35;">
+                  <Label text="Логирование:" styleClass="normal-text" minWidth="120" />
+                  <ComboBox fx:id="loggingLevelComboBox" styleClass="input-field" 
+                            style="-fx-pref-width: 200;" />
+               </HBox>
+               
+               <CheckBox fx:id="developerModeCheckBox" text="Режим разработчика" 
+                         styleClass="check-box" style="-fx-pref-height: 25;" />
+               <CheckBox fx:id="debugModeCheckBox" text="Отладочный режим" 
+                         styleClass="check-box" style="-fx-pref-height: 25;" />
+               <CheckBox fx:id="verboseLoggingCheckBox" text="Подробное логирование" 
+                         styleClass="check-box" style="-fx-pref-height: 25;" />
+               
+               <Button styleClass="secondary-button" text="Очистить кэш" 
+                       onAction="#onClearCacheClick" 
+                       style="-fx-pref-width: 150; -fx-margin: 5 0 0 0;" />
+            </VBox>
+         </VBox>
+         
+         <!-- Кнопки управления -->
+         <HBox alignment="CENTER_RIGHT" spacing="15" style="-fx-padding: 10 0 20 0;">
+            <Button styleClass="secondary-button" text="Экспорт настроек" 
+                    onAction="#onExportClick" style="-fx-pref-width: 150;" />
+            <Button styleClass="secondary-button" text="Импорт настроек" 
+                    onAction="#onImportClick" style="-fx-pref-width: 150;" />
+            <Button styleClass="secondary-button" text="Сбросить настройки" 
+                    onAction="#onResetClick" style="-fx-pref-width: 150;" />
+            <HBox HBox.hgrow="ALWAYS" />
+            <Button styleClass="secondary-button" text="Отмена" 
+                    onAction="#onCancelClick" style="-fx-pref-width: 100;" />
+            <Button styleClass="primary-button" text="Сохранить" 
+                    onAction="#onSaveClick" style="-fx-pref-width: 100;" />
+         </HBox>
+         
+         <!-- Информационная панель -->
+         <HBox alignment="CENTER" spacing="10" styleClass="panel-background" 
+               style="-fx-padding: 10;">
+            <Label text="Текущая версия: 1.0.0" styleClass="normal-text" />
+            <Label text="|" styleClass="normal-text" />
+            <Label text="Настройки будут применены после перезапуска приложения" 
+                   styleClass="normal-text" style="-fx-text-fill: #8E5915;" />
+            <HBox HBox.hgrow="ALWAYS" />
+            <Button styleClass="link-button" text="Помощь" 
+                    onAction="#onHelpClick" style="-fx-padding: 0 5;" />
+            <Label text="|" styleClass="normal-text" />
+            <Button styleClass="link-button" text="О приложении" 
+                    onAction="#onAboutClick" style="-fx-padding: 0 5;" />
+         </HBox>
+      </VBox>
+   </ScrollPane>
+</AnchorPane>

@@ -1,0 +1,19 @@
+[ {
+  "id" : 1,
+  "title" : "Dota 2",
+  "genre" : "MOBA",
+  "description" : "5v5 multiplayer battle arena",
+  "imageUrl" : null
+}, {
+  "id" : 2,
+  "title" : "CS:GO",
+  "genre" : "FPS",
+  "description" : "Tactical shooter",
+  "imageUrl" : null
+}, {
+  "id" : 3,
+  "title" : "World of Warcraft",
+  "genre" : "MMORPG",
+  "description" : "Massively multiplayer online role-playing game",
+  "imageUrl" : null
+} ]

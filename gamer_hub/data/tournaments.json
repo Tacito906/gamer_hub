@@ -1,0 +1,14 @@
+[ {
+  "id" : 1,
+  "title" : "Dota 2 Spring Championship",
+  "gameId" : 1,
+  "description" : "Ежегодный весенний чемпионат по Dota 2",
+  "startDate" : [ 2025, 12, 23, 8, 46, 59, 549525030 ],
+  "endDate" : [ 2025, 12, 24, 8, 46, 59, 549624804 ],
+  "prizeInfo" : "Призовой фонд: 10000 руб",
+  "creatorId" : 1,
+  "communityId" : 0,
+  "participantIds" : [ 2 ],
+  "status" : "upcoming",
+  "global" : true
+} ]

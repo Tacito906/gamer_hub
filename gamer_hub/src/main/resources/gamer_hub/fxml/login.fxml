@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<AnchorPane prefHeight="400" prefWidth="600" styleClass="dark-background" 
+            xmlns="http://javafx.com/javafx/17" 
+            xmlns:fx="http://javafx.com/fxml/1" 
+            fx:controller="gamer_hub.controllers.LoginController">
+   
+   <VBox alignment="CENTER" spacing="25" 
+         AnchorPane.bottomAnchor="0.0" 
+         AnchorPane.leftAnchor="0.0" 
+         AnchorPane.rightAnchor="0.0" 
+         AnchorPane.topAnchor="0.0">
+      
+      <Label styleClass="title-text" text="Gamer Hub" />
+      
+      <VBox alignment="CENTER" spacing="20" styleClass="panel-background" 
+            style="-fx-pref-width: 400;">
+         
+         <Label styleClass="subtitle-text" text="Вход в аккаунт" />
+         
+         <VBox styleClass="input-group" style="-fx-pref-width: 320;">
+            <Label styleClass="normal-text" text="Имя пользователя:" />
+            <TextField styleClass="input-field" fx:id="usernameField" 
+                      promptText="Введите имя пользователя" />
+         </VBox>
+         
+         <VBox styleClass="input-group" style="-fx-pref-width: 320;">
+            <Label styleClass="normal-text" text="Пароль:" />
+            <PasswordField styleClass="password-field" fx:id="passwordField" 
+                          promptText="Введите пароль" onAction="#onLogin" />
+         </VBox>
+         
+         <Label fx:id="errorLabel" styleClass="error-text" text="" 
+                style="-fx-pref-width: 320; -fx-alignment: center;" />
+         
+         <VBox styleClass="button-group" style="-fx-pref-width: 320;">
+            <Button styleClass="primary-button" fx:id="loginButton" 
+                    text="Войти" onAction="#onLogin" />
+            
+            <HBox alignment="CENTER" spacing="5" styleClass="separator">
+               <Label styleClass="link-text" text="Нет аккаунта?" />
+               <Button styleClass="link-button" fx:id="registerButton" 
+                       text="Зарегистрироваться" onAction="#onRegister" />
+            </HBox>
+         </VBox>
+      </VBox>
+   </VBox>
+</AnchorPane>

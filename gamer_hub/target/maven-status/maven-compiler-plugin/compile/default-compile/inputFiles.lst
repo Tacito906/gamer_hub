@@ -1,0 +1,13 @@
+/home/tacito/NyaKawai/Java/gamer_hub/src/main/java/gamer_hub/controllers/LoginController.java
+/home/tacito/NyaKawai/Java/gamer_hub/src/main/java/gamer_hub/model/User.java
+/home/tacito/NyaKawai/Java/gamer_hub/src/main/java/gamer_hub/model/ProfileRequest.java
+/home/tacito/NyaKawai/Java/gamer_hub/src/main/java/module-info.java
+/home/tacito/NyaKawai/Java/gamer_hub/src/main/java/gamer_hub/controllers/RegisterController.java
+/home/tacito/NyaKawai/Java/gamer_hub/src/main/java/gamer_hub/controllers/AddGameController.java
+/home/tacito/NyaKawai/Java/gamer_hub/src/main/java/gamer_hub/App.java
+/home/tacito/NyaKawai/Java/gamer_hub/src/main/java/gamer_hub/model/Tournament.java
+/home/tacito/NyaKawai/Java/gamer_hub/src/main/java/gamer_hub/model/Community.java
+/home/tacito/NyaKawai/Java/gamer_hub/src/main/java/gamer_hub/controllers/MainController.java
+/home/tacito/NyaKawai/Java/gamer_hub/src/main/java/gamer_hub/service/DataManager.java
+/home/tacito/NyaKawai/Java/gamer_hub/src/main/java/gamer_hub/service/JsonHelp.java
+/home/tacito/NyaKawai/Java/gamer_hub/src/main/java/gamer_hub/model/Game.java

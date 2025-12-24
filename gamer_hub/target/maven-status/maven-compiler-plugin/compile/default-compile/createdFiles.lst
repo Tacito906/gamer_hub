@@ -1,0 +1,13 @@
+gamer_hub/controllers/RegisterController.class
+gamer_hub/model/Community.class
+gamer_hub/service/DataManager.class
+gamer_hub/model/User.class
+gamer_hub/service/JsonHelp.class
+gamer_hub/model/Game.class
+gamer_hub/model/ProfileRequest.class
+gamer_hub/model/Tournament.class
+module-info.class
+gamer_hub/controllers/AddGameController.class
+gamer_hub/controllers/LoginController.class
+gamer_hub/controllers/MainController.class
+gamer_hub/App.class
